@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <img src="LogoDigiPass.png" alt="">
+        <h1>DigiPass</h1>
+    </header>
+
+    <main class="main-qrCode">
+        <div class="info-qrcode">
+            <div class="qrCodeContainer">
+                <img id="codigo" src="https://img.icons8.com/?size=100&id=eqB0Vo1ht3db&format=png&color=000000" alt="QR Code">
+            </div>
+            <h3 id="btn-copiar">Copiar codigo</h3>
+        </div>
+        <!-- <button onclick="gerarQRCode()">Gerar Novo QR Code</button> -->
+    </main>
+
+    <script>
+
+        const btnCopiar = document.getElementById("btn-copiar");
+
+        btnCopiar.addEventListener("click", () => {
+            const imgCodigo = document.getElementById("codigo").src;
+            navigator.clipboard.writeText(imgCodigo).then( () => {
+                alert("Código copiado com sucesso!");
+            }).catch((err) => {
+                console.error("Não foi possível copiar o código:", err);
+                alert("Não foi possível copiar o código!");
+            });
+        });
+    </script>
+</body>
+</html>

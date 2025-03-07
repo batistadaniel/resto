@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completar Cadastro</title>
+    <link rel="stylesheet" href="recarga.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img class="logo" src="./src/img/global/LogoDigiPass.png" width="80px" alt="Logo DigiPass">
+            <h1>DigiPass</h1>
+        </header>
+
+        <form class="form-container" id="recargaForm">
+
+            <div class="info-recarga">
+                <h3>Quanto você deseja recarregar?</h3>
+                <p>O valor mínimo é R$ 10,00 e o máximo é R$ 500,00.</p>
+            </div>
+
+            <div class="input-group">
+                <label for="vlrRecarga">Valor da Recarga:</label>
+                <input type="text" id="vlrRecarga" name="vlrRecarga" required placeholder="R$  00,00">
+                <!-- <span class="currency-symbol">R$</span> -->
+            </div>
+
+            <button type="submit" class="btn">Confirmar</button>
+        </form>
+    </div>
+</body>
+</html>

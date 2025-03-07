@@ -1,0 +1,77 @@
+@import './src/css/global/global.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    background-color: var(--cor-preto)
+}
+
+header {
+    width: 100%;
+    height: 48px;
+    top: 0;
+    background-color: var(--cor-app);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+header img {
+    width: 44px;
+}
+
+.container {
+    background-color: var(--cor-branco);
+    width: 360px;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.form-container {
+    padding-top: 30px;
+    width: 90%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: var(--cor-branco);
+    height: 100dvh;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--cor-preto);
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px;
+    background-color: var(--cor-bg-input);
+    border: 1px solid var(--cor-border-input);
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border: 2px solid var(--cor-app);
+    box-shadow: 0 3px 10px var(--cor-app);
+}

@@ -1,0 +1,171 @@
+.container {
+    background-color: var(--cor-branco);
+    width: 360px;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+body{
+    text-align: center;
+}
+.footer{
+    display: flex;
+    background-color:#67B0B4;
+    position: relative; top: -8px;left: -8px;
+    width: 100%;
+}
+button{
+    border: none;
+    padding-top: 4px;
+    width: 70px;
+    height: 45px;
+}
+h5{
+    position: relative;top: -18px;
+}
+
+input{
+    border: none;
+    width: 220px;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: #E8E8E8;
+    color: gray;
+    box-shadow: inset 2px 2px 3px;
+}
+.salvar{
+    position: relative;left: -25px;
+    background-color:#67B0B4;
+    border-radius: 15%;
+    /*border: none;*/
+}
+.cancelar{
+    position: relative;left: 28px;
+    background-color:#67B0B4;
+    border-radius: 15%;
+    /*border: none;*/
+}
+h4{
+    position: relative;left: -55px;
+}
+label{
+    display: flex;
+    position: relative;left: 835px;top: 15px;
+}
+
+.botoes{
+    display: flex;
+    position: relative;
+    width: auto;
+    left: 100px;
+}
+
+
+@media screen and (max-width: 768px){
+    .footer{
+        width: 105%;
+        height: 48px;
+    }
+    form{
+        position: relative;top: -12px;
+    }
+    .salvar{
+        position: relative;left: -35px;
+    }
+    h1{
+        position: relative;top: -15px;
+    }
+    .logo{
+        width: 44px;
+    }
+    label{
+        display: flex;
+        position: relative;left: 60px;top: 15px;
+    }
+}
+
+/* tela 2 */
+
+h5{
+    position: relative;top: -18px;
+}
+
+.alterar{
+    position: relative;left: -25px;
+    background-color: #67B0B4;
+    border-radius: 15%;
+
+    /*border: none;*/
+}
+.excluir{
+    position: relative;left: 65px;top: -60px;
+    background-color: #67B0B4;
+    border-radius: 15%;
+    /*border: none;*/
+}
+h4{
+    position: relative;left: -55px;
+}
+
+.js{
+    display: none;
+    width: 320px;
+    height: 90px;
+    position: relative;top: -45px;left: 800px;
+    border-radius: 10%;
+}
+.msg{
+    position: relative;top: -8px;left: 68px;
+}
+.js.abrir{
+
+    display: flex;
+    background-color: gray;
+}
+.botao{
+    position: relative;left: -37px;
+}
+.sim,.nao{
+    width: 60px;
+    padding: 2px;
+}
+.sim{
+    position: relative;left: -110px;
+}
+.nao{
+    position: relative;left: -85px;
+}
+.cadAlt{
+    position: relative;left: 5px;
+}
+.cad{
+    position: relative;left: -16px;
+}
+
+@media screen and (max-width: 768px){
+    
+    form{
+        position: relative;top: -12px;
+    }
+    .alterar{
+        position: relative;left: -35px;
+    }
+    .js{
+        position: relative;left: 45px;top: -125px;
+        width: 255px;
+        border-radius: 15px;
+    }
+    h4{
+        width: 220px;
+    }
+    .nao{
+        position: relative;left: -25px;
+    }
+    .sim{
+        position: relative;left: -75px;
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleDados.css">
+    <title>Editar Perfil</title>
+</head>
+<body>
+
+    <div class="container">
+        <footer class="footer">
+            <img class="logo" src="LogoDigiPass.png" width="80px">
+            <h1>DigiPass</h1>
+        </footer>
+    
+        <h4 class="cadAlt">Cadastro/Alterar</h4>
+    
+        <form id="cadedit">
+            <label class="nome" for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" placeholder="Joao"><br><br>
+        
+            <label class="cpf" for="CPF">CPF:</label><br>
+            <input type="text" id="CPF" name="CPF" placeholder="000.000.000-00"><br><br>
+        
+            <label class="dtNasc" for="dtNasc">Data de Nascimento:</label><br>
+            <input type="date" id="dtNasc" name="dtNasc"><br><br>
+        
+            <label class="telCelula" for="telCelula">Telefone Celular:</label><br>
+            <input type="tel" id="telCelula" name="telCelula" placeholder="(00) 0000-0000"><br><br>
+        
+            <label class="telFixo" for="telFixo">Telefone Fixo:</label><br>
+            <input type="tel" id="telFixo" name="telFixo" placeholder="(00) 0000-0000"><br><br>
+        
+            <label class="email" for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" placeholder="joao@gmail.com"><br><br>
+        
+            <div class="botoes">
+                <button type="submit" class="salvar">
+                    <img src="Icons/salvar.png" width="20px"> 
+                    <h5>Salvar</h5>
+                </button>
+    
+                <button type="button" class="cancelar" onclick="window.location.href='Tela_Perfil.html'">
+                    <img src="Icons/simbolo-x.png" width="20px"> 
+                    <h5>Cancelar</h5>
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    <script defer>
+        document.getElementById("cadedit").addEventListener("submit", function (event) {
+            // Aqui você pode adicionar lógica para processar os dados do formulário, se necessário
+            event.preventDefault()
+            window.location.href = "Tela_Menu.html"; // Redireciona após o envio
+        });
+    </script>
+</body>
+</html>

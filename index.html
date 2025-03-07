@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/pages/index/index.css">
+    <title>DigiPass</title>
+</head>
+<body>
+
+    <div class="container">
+        <!-- logo -->
+        <div class="logo-container">
+            <img src="./src/img/global/LogoDigiPass.png" alt="Logo DigiPass">
+            <h1>DigiPass</h1>
+        </div>
+
+        <!-- form de login -->
+        <form class="form-container" id="loginForm">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Senha:</label>
+            <div class="input-group">
+                <input type="password" id="password" name="password" required>
+                <img src="https://img.icons8.com/?size=100&id=59814&format=png&color=67B0B4" class="toggle-password" id="togglePassword" alt="Mostrar senha">
+            </div>
+
+            <button type="submit" class="btn">Entrar</button>
+            <p class="toggle-form" id="showRegister">Não tem conta ainda? Cadastre-se</p>
+        </form>
+
+        <!-- form de cadastro -->
+        <form class="form-container hidden" id="registerForm">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="emailRegister">E-mail:</label>
+            <input type="email" id="emailRegister" name="email" required>
+
+            <label for="passwordRegister">Senha:</label>
+            <div class="input-group">
+                <input type="password" id="passwordRegister" name="password" required>
+                <img src="https://img.icons8.com/?size=100&id=59814&format=png&color=67B0B4" class="toggle-password" id="togglePasswordRegister" alt="Mostrar senha">
+            </div>
+
+            <button type="submit" class="btn">Cadastrar</button>
+            <p class="toggle-form" id="showLogin">Já tem uma conta? Faça login</p>
+        </form>
+
+        <!-- biometria -->
+        <div class="biometric-auth" id="biometricAuth">
+            <img src="./src/img/pages/index/Biometria.png" alt="Impressão digital">
+            <p>Entre utilizando sua <br>impressão digital</p>
+        </div>
+
+        <div class="mt-3" id="mensagem"></div>
+    </div>
+    
+
+    <script type="module"  src="./src/js/pages/index/global.js" defer></script>
+    <!-- <script>
+        document.getElementById('registerForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('name').value;
+            // const cpf = document.getElementById('cpf').value;
+            // const data_nascimento = document.getElementById('dtNascimento').value;
+            // const telefone = document.getElementById('telefone').value;
+            const email = document.getElementById('emailRegister').value;
+            const senha_hash = document.getElementById('passwordRegister').value;
+
+            // if (!nome || !senha_hash || !email) {
+            //     alert('Todos os campos devem ser preenchidos.');
+            //     return;
+            // }
+
+            if (!nome ){
+                alert("nome")
+            }
+
+            if (!senha_hash ){
+                alert("senha_hash")
+            }
+
+            if (!email ){
+                alert("email")
+            }
+
+            const usuarios = { nome, email , senha_hash};
+
+            fetch('http://localhost:3020/Cadastro', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(usuarios)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.message === 'usuario cadastrado com sucesso'){
+                    alert('primeira fase concluida');
+                    // localStorage.setItem('cpf' , cpf);
+                    window.location.href = 'home.html';
+                }
+                else{
+                    const mensagem = document.getElementById('mensagem');
+                    mensagem.classList.add('alert', 'alert-danger');
+                    mensagem.innerHTML = data.message;
+                }
+            })
+            .catch(error => {
+                const mensagem = document.getElementById('mensagem');
+                mensagem.classList.add('alert', 'alert-danger');
+                mensagem.innerHTML = 'Falha ao cadastrar. Tente novamente.';
+                console.error('Error:', error);
+            });
+        });
+    </script> -->
+
+    <script>
+
+        document.getElementById('loginForm').addEventListener("submit", function (event)  {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const senha_hash = document.getElementById('password').value;
+
+
+            const usuarios = { email , senha_hash };
+
+            fetch('http://localhost:3020/Login' , {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json' 
+                },
+                body: JSON.stringify(usuarios)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.message === 'Login efetuado com sucesso') {
+                    mensagem.classList.add('alert', 'alert-success');
+                    mensagem.innerText = data.message;
+                    window.location.href = 'Tela_Menu.html';
+                } else {
+                    mensagem.classList.add('alert', 'alert-danger');
+                    mensagem.innerText = data.message;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                mensagem.classList.add('alert', 'alert-danger');
+                mensagem.innerText = 'Falha ao realizar o login. Tente novamente.';
+            });
+        });   
+
+    </script>
+</body>
+</html>
